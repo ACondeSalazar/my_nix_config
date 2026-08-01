@@ -18,7 +18,6 @@
     enable = true;
     settings = {
       "exec-once" = [
-        "noctalia-shell"
         "hyprpaper"
       ];
 

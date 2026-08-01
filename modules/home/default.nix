@@ -1,6 +1,5 @@
-{ inputs, ... }: {
+{ ... }: {
   imports = [
-    inputs.noctalia.homeModules.default
     ./shell.nix
     ./desktop.nix
     ./editors.nix
@@ -9,7 +8,6 @@
     ./git.nix
   ];
 
-  programs.noctalia-shell.enable = true;
   programs.home-manager.enable = true;
   home.stateVersion = "25.11";
 }
