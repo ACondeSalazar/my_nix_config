@@ -6,6 +6,7 @@
     ./editors.nix
     ./terminal.nix
     ./packages.nix
+    ./git.nix
   ];
 
   programs.noctalia-shell.enable = true;
