@@ -1,4 +1,19 @@
-{ ... }: {
+{ pkgs, ... }: {
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+    setSessionVariables = true;
+  };
+
+  home.pointerCursor = {
+    name = "Bibata-Original-Ice";
+    package = pkgs.bibata-cursors;
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
+    hyprcursor.enable = true;
+  };
+
   home.file.".config/hypr/hyprpaper.conf".text = ''
     splash = false
     ipc = on
@@ -53,7 +68,7 @@
         "$mod, T, exec, foot"
         "$mod, W, exec, zen"
         "$mod, C, exec, zeditor"
-        "$mod, E, exec, foot -e ranger"
+        "$mod, E, exec, foot -e yazi"
 
         "$mod, Space, exec, rofi -show drun"
 
@@ -75,6 +90,10 @@
         "CTRL ALT, left, workspace, -1"
         "CTRL ALT SHIFT, right, movetoworkspace, +1"
         "CTRL ALT SHIFT, left, movetoworkspace, -1"
+
+        ", Print, exec, hyprshot -m region"
+        "SHIFT, Print, exec, hyprshot -m window"
+        "CTRL, Print, exec, hyprshot -m output"
       ];
 
       binde = [
@@ -83,6 +102,10 @@
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      ];
+
+      bindr = [
+        "SUPER, Super_L, exec, /etc/profiles/per-user/toasti/bin/qs -p /etc/nixos/theme/quickshell_theme/island ipc call island toggle"
       ];
 
       bindm = [

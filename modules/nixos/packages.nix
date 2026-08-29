@@ -9,7 +9,7 @@
     git
     brightnessctl
     inputs.zen-browser.packages.${pkgs.system}.default
-    ranger
+    yazi
     gcc
     btop
   ];

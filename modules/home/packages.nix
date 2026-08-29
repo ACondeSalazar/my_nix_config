@@ -4,6 +4,8 @@
     eza
     hyprpaper
     micromamba
-    claude-code
+    ncdu
+    quickshell
+    hyprshot
   ];
 }
